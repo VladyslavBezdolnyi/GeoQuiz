@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(GeoTimer.isRun){
-            booleanTest.setText(new Country(countries).name);
+            booleanTest.setText(new Country(countries));
         }
         else{
             booleanTest.setText("False");
@@ -73,10 +73,33 @@ class Country{
 
     Country(String[] countries){
         this.name = countries[new RandomCountryNum(countries.length).getNum()];
+        encrypting();
     }
 
     void encrypting(){
+        Random random = new Random();
+        int maxCharacterNum = 14;
 
+        if (name.length() > maxCharacterNum - 3){
+            System.out.println("Ошибка. Невозможно создать страну с таким количеством символов."); // Изменить на алерт и выход из приложения
+        }
+        else{
+            encryptedNameList = new char[name.length() + 2 + random.nextInt(maxCharacterNum - (name.length() + 1))];
+            for (int i = 0; i < name.length() -1; i++){
+                encryptedNameList[i] = name.charAt(i);
+            }
+            for (int i = 0; i < name.length(); i++){
+                encryptedNameList[i] = (char)(random.nextInt(26) + 'a');
+            }
+            for(int i=0; i<encryptedNameList.length - 1; i++){
+                int j = random.nextInt(encryptedNameList.length-1);
+                // Swap letters
+                char temp = encryptedNameList[i];
+                encryptedNameList[i] = encryptedNameList[j];
+                encryptedNameList[j] = temp;
+            }
+
+        }
     }
 
 }
