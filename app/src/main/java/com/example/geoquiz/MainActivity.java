@@ -77,7 +77,7 @@ class Country{
 
     Country(String[] countries){
         this.name = countries[new RandomCountryNum(countries.length).getNum()];
-        encrypting();
+        encrypting(); // encrypting name char letters
     }
 
     private void encrypting(){
@@ -136,6 +136,8 @@ class Player{
     }
 
 }
+
+
 
 
 
