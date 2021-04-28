@@ -33,41 +33,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void pushButton(View view){
-        timeView = findViewById(R.id.num);
-        if(!GeoTimer.isRun){
-            geo = new GeoTimer(timeView);
-        }
-
-    }
-
-    public void setText(final TextView text,final String value){
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                text.setText(value);
-            }
-        });
-    }
-
-    public void testMe(View view){
-
-        TextView booleanTest = findViewById(R.id.bool_test);
-
-
-        if(GeoTimer.isRun){
-           Country country = new Country(countries);
-
-            for (int i = 0; i < country.encryptedNameList.length - 1; i++){
-                setText(booleanTest, String.valueOf(country.encryptedNameList[i]));
-            }
-        }
-        else{
-            booleanTest.setText("False");
-        }
-
-    }
-
 }
 
 class Country{

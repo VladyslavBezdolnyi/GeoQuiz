@@ -4,54 +4,149 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#faf8ef"
+    android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/num"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintGuide_percent="0.85"
+        android:orientation="vertical"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintGuide_percent="0.12"
+        android:orientation="horizontal"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintGuide_percent="0.88"
+        android:orientation="horizontal"
+        />
+
+
+    <ImageButton
+        android:id="@+id/image_button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:text="@string/num"
-        android:textSize="100sp"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="138dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="100dp"
-        android:onClick="pushButton"
-        android:text="Пуск"
-        app:layout_constraintEnd_toEndOf="@+id/num"
-        app:layout_constraintStart_toStartOf="@+id/num"
-        app:layout_constraintTop_toBottomOf="@+id/num" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="testMe"
-        android:text="Проверка"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.064" />
-
-    <TextView
-        android:id="@+id/bool_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="23dp"
-        android:text="none"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
 
+    <ImageView
+        android:id="@+id/main_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/italy_2"
+        app:layout_constraintBottom_toTopOf="@id/linear_list"
+        app:layout_constraintEnd_toStartOf="@id/end_line"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/start_line"
+        app:layout_constraintTop_toBottomOf="@id/top_line"
+        app:layout_constraintVertical_weight="34" />
 
+    <LinearLayout
+        android:paddingTop="25dp"
+        android:id="@+id/linear_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/main_image"
+        app:layout_constraintStart_toEndOf="@id/start_line"
+        app:layout_constraintEnd_toStartOf="@id/end_line"
+        app:layout_constraintBottom_toTopOf="@id/linear_button"
+        app:layout_constraintVertical_weight="18"
+        >
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:src="@drawable/default_account_image"
+            android:layout_weight="1"
+            android:layout_gravity="top"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lancelothicc"
+            android:textColor="@color/black"
+            android:layout_weight="6"
+            android:paddingLeft="7dp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rank"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:gravity="right"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="654"
+            android:textColor="@color/black"
+            android:gravity="right"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintVertical_weight="20"
+        app:layout_constraintTop_toBottomOf="@id/linear_list"
+        app:layout_constraintStart_toEndOf="@id/start_line"
+        app:layout_constraintEnd_toStartOf="@id/end_line"
+        app:layout_constraintBottom_toTopOf="@id/bottom_line">
+
+        <Button
+            android:id="@+id/button_1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_res2"
+            android:backgroundTint="#ffa077"
+            android:text="Start Game"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <Button
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="false"
+            android:id="@+id/button_2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_res2"
+            android:textColor="@color/white"
+            android:backgroundTint="#c2afa1"
+            android:text="Leaderboard"
+            />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

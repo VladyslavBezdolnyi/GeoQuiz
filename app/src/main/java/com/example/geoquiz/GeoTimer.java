@@ -8,7 +8,7 @@ import java.util.TimerTask;
 
 
 class GeoTimer{
-    MainActivity a = new MainActivity();
+
 
 
     TextView timeView;
@@ -20,7 +20,7 @@ class GeoTimer{
         @Override
         public void run() {
             seconds--;
-            a.setText(timeView, seconds + "");
+
 
             if (seconds <= 0){
                 isRun = false;
