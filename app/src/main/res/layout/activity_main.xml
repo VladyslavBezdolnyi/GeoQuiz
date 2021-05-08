@@ -46,18 +46,19 @@
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="#d4c9c6"
-        app:layout_constraintBottom_toTopOf="@+id/linear_list"
-        app:layout_constraintEnd_toEndOf="@id/linear_list"
-        app:layout_constraintStart_toStartOf="@id/linear_list"
+        app:layout_constraintBottom_toTopOf="@+id/linear_space"
+        app:layout_constraintEnd_toEndOf="@id/linear_space"
+        app:layout_constraintStart_toStartOf="@id/linear_space"
         />
 
     <View
+        android:id="@+id/head_help_line"
         android:layout_width="50dp"
         android:layout_height="1dp"
         android:background="#d4c9c6"
         app:layout_constraintTop_toBottomOf="@id/head_line"
         app:layout_constraintStart_toStartOf="@id/head_line"
-        app:layout_constraintBottom_toBottomOf="@id/linear_list"
+        app:layout_constraintBottom_toBottomOf="@id/linear_space"
         app:layout_constraintVertical_bias="0.38"
 
         />
@@ -67,19 +68,12 @@
         android:background="#d4c9c6"
         app:layout_constraintTop_toBottomOf="@id/head_line"
         app:layout_constraintStart_toStartOf="@id/head_line"
-        app:layout_constraintBottom_toBottomOf="@id/linear_list"
+        app:layout_constraintBottom_toBottomOf="@id/linear_space"
         app:layout_constraintVertical_bias="0.48"
 
         />
 
-<!--    <View
-        android:layout_width="10dp"
-        android:layout_height="1dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/linear_list"
-        app:layout_constraintEnd_toEndOf="@id/linear_list"
-        app:layout_constraintStart_toStartOf="@id/linear_list"
-        />-->
+
 
 
 
@@ -102,7 +96,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/ic_square_1"
-        app:layout_constraintBottom_toTopOf="@id/linear_list"
+        app:layout_constraintBottom_toTopOf="@id/linear_space"
         app:layout_constraintEnd_toEndOf="@id/end_line"
         app:layout_constraintStart_toStartOf="@id/start_line"
         app:layout_constraintTop_toBottomOf="@id/top_line"
@@ -123,24 +117,32 @@
 
 
 
-
+    <View
+        android:id="@+id/linear_space"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/button_1"
+        app:layout_constraintEnd_toEndOf="@id/main_image"
+        app:layout_constraintStart_toStartOf="@id/main_image"
+        app:layout_constraintTop_toBottomOf="@id/main_image"
+        android:layout_marginTop="15dp"
+        app:layout_constraintVertical_weight="18"
+        />
 
     <LinearLayout
         android:id="@+id/linear_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
 
-        android:gravity="top"
-        android:paddingTop="9dp"
+        android:gravity="center_vertical"
 
 
-        app:layout_constraintBottom_toTopOf="@id/button_1"
-        app:layout_constraintEnd_toEndOf="@id/main_image"
-        app:layout_constraintStart_toStartOf="@id/main_image"
-        app:layout_constraintTop_toBottomOf="@id/main_image"
-        app:layout_constraintVertical_weight="18">
+        app:layout_constraintTop_toBottomOf="@id/head_line"
+        app:layout_constraintBottom_toTopOf="@+id/head_help_line"
+        app:layout_constraintStart_toStartOf="@+id/head_line"
+        app:layout_constraintEnd_toEndOf="@id/head_line"
+        >
 
 
         <ImageView
@@ -191,12 +193,13 @@
         android:textColor="@color/white"
         android:textSize="18sp"
 
-        app:layout_constraintHeight_max="60dp"
 
         app:layout_constraintBottom_toTopOf="@id/button_2"
         app:layout_constraintEnd_toStartOf="@id/end_line"
+        app:layout_constraintHeight_max="60dp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/start_line"
-        app:layout_constraintTop_toBottomOf="@+id/linear_list"
+        app:layout_constraintTop_toBottomOf="@+id/linear_space"
         app:layout_constraintVertical_weight="10" />
 
     <Button
