@@ -13,32 +13,28 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15"
-        />
+        app:layout_constraintGuide_percent="0.15" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/end_line"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintGuide_percent="0.85"
         android:orientation="vertical"
-        />
+        app:layout_constraintGuide_percent="0.85" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/top_line"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintGuide_percent="0.12"
         android:orientation="horizontal"
-        />
+        app:layout_constraintGuide_percent="0.1" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottom_line"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintGuide_percent="0.88"
         android:orientation="horizontal"
-        />
-
-
-
+        app:layout_constraintGuide_percent="0.89" />
 
 
     <View
@@ -48,110 +44,104 @@
         android:background="#d4c9c6"
         app:layout_constraintBottom_toTopOf="@+id/linear_space"
         app:layout_constraintEnd_toEndOf="@id/linear_space"
-        app:layout_constraintStart_toStartOf="@id/linear_space"
-        />
+        app:layout_constraintStart_toStartOf="@id/linear_space" />
 
     <View
         android:id="@+id/head_help_line"
         android:layout_width="50dp"
         android:layout_height="1dp"
         android:background="#d4c9c6"
-        app:layout_constraintTop_toBottomOf="@id/head_line"
-        app:layout_constraintStart_toStartOf="@id/head_line"
         app:layout_constraintBottom_toBottomOf="@id/linear_space"
+        app:layout_constraintStart_toStartOf="@id/head_line"
+        app:layout_constraintTop_toBottomOf="@id/head_line"
         app:layout_constraintVertical_bias="0.38"
 
         />
+
     <View
+        android:id="@+id/view"
         android:layout_width="25dp"
         android:layout_height="1dp"
         android:background="#d4c9c6"
-        app:layout_constraintTop_toBottomOf="@id/head_line"
-        app:layout_constraintStart_toStartOf="@id/head_line"
         app:layout_constraintBottom_toBottomOf="@id/linear_space"
-        app:layout_constraintVertical_bias="0.48"
+        app:layout_constraintStart_toStartOf="@id/head_line"
+        app:layout_constraintTop_toBottomOf="@id/head_line"
 
-        />
-
-
-
-
+        app:layout_constraintVertical_bias="0.48" />
 
 
     <ImageButton
         android:id="@+id/image_button_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintHorizontal_bias="0.99"
-        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_help"
+        android:background="@null"
+        android:padding="8dp"
+        app:layout_constraintHorizontal_bias="1"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
-        android:layout_marginStart="18dp"
-        android:layout_marginEnd="18dp"
         android:id="@+id/main_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
         android:src="@drawable/ic_square_1"
         app:layout_constraintBottom_toTopOf="@id/linear_space"
         app:layout_constraintEnd_toEndOf="@id/end_line"
         app:layout_constraintStart_toStartOf="@id/start_line"
         app:layout_constraintTop_toBottomOf="@id/top_line"
-        app:layout_constraintVertical_weight="42"
-        />
+        app:layout_constraintVertical_weight="42" />
 
     <ImageView
         android:id="@+id/country_tag"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_max="190dp"
         android:src="@drawable/italy_01"
         app:layout_constraintBottom_toBottomOf="@id/main_image"
-        app:layout_constraintTop_toTopOf="@id/main_image"
-        app:layout_constraintStart_toStartOf="@+id/main_image"
         app:layout_constraintEnd_toEndOf="@id/main_image"
-        />
-
+        app:layout_constraintHeight_max="190dp"
+        app:layout_constraintStart_toStartOf="@+id/main_image"
+        app:layout_constraintTop_toTopOf="@id/main_image" />
 
 
     <View
         android:id="@+id/linear_space"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintBottom_toTopOf="@id/button_1"
         app:layout_constraintEnd_toEndOf="@id/main_image"
         app:layout_constraintStart_toStartOf="@id/main_image"
         app:layout_constraintTop_toBottomOf="@id/main_image"
-        android:layout_marginTop="15dp"
-        app:layout_constraintVertical_weight="18"
-        />
+        app:layout_constraintVertical_weight="16" />
 
     <LinearLayout
         android:id="@+id/linear_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="horizontal"
-
         android:gravity="center_vertical"
 
+        android:orientation="horizontal"
 
-        app:layout_constraintTop_toBottomOf="@id/head_line"
+
         app:layout_constraintBottom_toTopOf="@+id/head_help_line"
-        app:layout_constraintStart_toStartOf="@+id/head_line"
         app:layout_constraintEnd_toEndOf="@id/head_line"
-        >
+        app:layout_constraintStart_toStartOf="@+id/head_line"
+        app:layout_constraintTop_toBottomOf="@id/head_line">
 
 
         <ImageView
             android:id="@+id/player_image"
             android:layout_width="0dp"
             android:layout_height="19dp"
+            android:layout_marginStart="12dp"
             android:layout_weight="2"
-            android:src="@drawable/default_account_image"
-            android:layout_marginStart="12dp"/>
+            android:src="@drawable/default_account_image" />
 
         <TextView
             android:id="@+id/player_name"
@@ -183,75 +173,54 @@
 
     <Button
         android:id="@+id/button_1"
+        style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:background="@drawable/button_res2"
         android:backgroundTint="#ffa077"
         android:text="Start Game"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="21sp"
+
+
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_button1"
+        app:iconGravity="textStart"
+        app:iconTint="@color/white"
+        app:iconPadding="15dp"
 
 
         app:layout_constraintBottom_toTopOf="@id/button_2"
         app:layout_constraintEnd_toStartOf="@id/end_line"
-        app:layout_constraintHeight_max="60dp"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/start_line"
         app:layout_constraintTop_toBottomOf="@+id/linear_space"
         app:layout_constraintVertical_weight="10" />
 
     <Button
-        android:textSize="18sp"
-        android:layout_marginTop="10dp"
-        android:textAllCaps="false"
         android:id="@+id/button_2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:background="@drawable/button_res2"
-        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#c2afa1"
         android:text="Leaderboard"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="19sp"
 
-        app:layout_constraintHeight_max="60dp"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_button2"
+        app:iconGravity="textStart"
+        app:iconPadding="15dp"
+        app:iconTint="@color/white"
 
-        app:layout_constraintTop_toBottomOf="@id/button_1"
-        app:layout_constraintStart_toEndOf="@id/start_line"
-        app:layout_constraintEnd_toStartOf="@id/end_line"
         app:layout_constraintBottom_toBottomOf="@id/bottom_line"
-        app:layout_constraintVertical_weight="10"
-            />
+
+        app:layout_constraintEnd_toStartOf="@id/end_line"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/start_line"
+        app:layout_constraintTop_toBottomOf="@id/button_1"
+        app:layout_constraintVertical_weight="10" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <!--   <View
-            android:id="@+id/line_view"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="#d5cac7"
-            app:layout_constraintStart_toStartOf="@id/main_image"
-            app:layout_constraintEnd_toEndOf="@id/main_image"
-            app:layout_constraintTop_toBottomOf="@+id/main_image"
-            android:layout_marginTop="20dp"
-            />
-        <View
-            android:id="@+id/small_line_view"
-            android:layout_width="55dp"
-            android:layout_height="1dp"
-            android:background="#d5cac7"
-            app:layout_constraintStart_toStartOf="@id/line_view"
-            app:layout_constraintTop_toBottomOf="@+id/line_view"
-            android:layout_marginTop="32dp"
-
-            />
-        <View
-            android:layout_width="25dp"
-            android:layout_height="1dp"
-            android:background="#d5cac7"
-            app:layout_constraintStart_toStartOf="@id/small_line_view"
-            app:layout_constraintTop_toBottomOf="@+id/small_line_view"
-            android:layout_marginTop="6dp"
-
-            />-->
