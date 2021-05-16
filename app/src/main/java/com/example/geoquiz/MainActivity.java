@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.View;
 
+import android.view.animation.Animation;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -23,16 +27,21 @@ public class MainActivity extends AppCompatActivity {
     TextView timeView;
     String[] countries;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
          countries = getResources().getStringArray(R.array.countries);
 
-
+         Button buttonStartGame = findViewById(R.id.button_1);
     }
 
 
+    public void startGame(View view) {
+        Intent intent = new Intent(this, PlayGround.class);
+        startActivity(intent);
+    }
 }
 
 class Country{
