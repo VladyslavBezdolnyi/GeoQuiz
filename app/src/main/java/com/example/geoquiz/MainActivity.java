@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     //test
     private ImageView[] countries_image_list;
     private ImageView countryTeg;
-    private Animation animation;
     private Random random = new Random();
     int imageId;
     //test
@@ -48,9 +47,33 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         countries = getResources().getStringArray(R.array.countries);
 
+        pushAnimation();
 
 
 
+
+
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        countryTeg.clearAnimation();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        countryTeg.clearAnimation();
+    }
+
+    public void startGame(View view) {
+        Intent intent = new Intent(this, PlayGround.class);
+        startActivity(intent);
+    }
+
+    private void pushAnimation(){
         //Animation>
         Animation.AnimationListener animationListener = new Animation.AnimationListener() {
 
@@ -78,38 +101,13 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        animation = AnimationUtils.loadAnimation(this, R.anim.maping_animation);
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.maping_animation);
         animation.setAnimationListener(animationListener);
         countryTeg = findViewById(R.id.country_tag);
         countryTeg.startAnimation(animation);
         //Animation>
-
-
     }
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        countryTeg.clearAnimation();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        countryTeg.clearAnimation();
-    }
-
-    public void startGame(View view) {
-        Intent intent = new Intent(this, PlayGround.class);
-        startActivity(intent);
-    }
-
-
 }
-
-
-
 
 
 
