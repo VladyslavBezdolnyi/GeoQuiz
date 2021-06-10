@@ -20,7 +20,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.86" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/top_line"
@@ -103,14 +103,14 @@
         android:id="@+id/country_tag"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/ic_help"
+        android:src="@drawable/italy_01"
         app:layout_constraintBottom_toBottomOf="@id/main_image"
         app:layout_constraintEnd_toEndOf="@id/main_image"
         app:layout_constraintHeight_max="235dp"
-        app:layout_constraintHorizontal_bias="1.0"
+
         app:layout_constraintStart_toStartOf="@+id/main_image"
         app:layout_constraintTop_toTopOf="@id/main_image"
-        app:layout_constraintVertical_bias="0.492" />
+         />
 
     <View
         android:id="@+id/linear_space"

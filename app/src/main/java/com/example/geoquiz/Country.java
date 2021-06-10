@@ -14,7 +14,7 @@ class Country{
 
     private void encrypting(){
         Random random = new Random();
-        int maxCharacterNum = 14;
+        int maxCharacterNum = 32;
 
         if (name.length() > maxCharacterNum - 3){
             System.out.println("Ошибка. Невозможно создать страну с таким количеством символов.");
