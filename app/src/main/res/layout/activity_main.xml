@@ -179,7 +179,7 @@
         style="@style/Widget.MaterialComponents.Button.Icon"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="#ffa077"
+        android:backgroundTint="@color/orange"
         android:onClick="startGame"
         android:text="Start Game"
         android:textAllCaps="false"
@@ -196,9 +196,10 @@
         app:iconTint="@color/white"
         app:layout_constraintBottom_toTopOf="@id/button_2"
         app:layout_constraintEnd_toStartOf="@id/end_line"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/start_line"
-        app:layout_constraintTop_toBottomOf="@+id/linear_space"
 
+        app:layout_constraintTop_toBottomOf="@+id/linear_space"
         app:layout_constraintVertical_weight="10" />
 
     <Button
@@ -207,7 +208,7 @@
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:backgroundTint="#c2afa1"
+        android:backgroundTint="@color/gray"
         android:text="Leaderboard"
         android:textAllCaps="false"
         android:textColor="@color/white"

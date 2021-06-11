@@ -20,11 +20,7 @@ public class PlayGround extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_ground);
         imageView = findViewById(R.id.country_tag);
-        animation = AnimationUtils.loadAnimation(this, R.anim.maping_animation);
+
     }
 
-
-    public void startAnimation(View view){
-       imageView.startAnimation(animation);
-    }
 }

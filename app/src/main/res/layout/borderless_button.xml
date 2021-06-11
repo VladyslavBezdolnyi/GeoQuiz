@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+    app:cornerRadius="5dp"
+    app:strokeColor="@color/gray"
+    app:strokeWidth="3dp"
+    android:layout_width="48dp"
+    android:layout_height="55dp"
+    android:text="A"
+    android:minWidth="0dp"
+    android:height="52dp"
+    android:minHeight="0dp"
+    android:layout_margin="5dp"
+    android:textColor="@color/orange"
+    android:textStyle="bold"
+    android:textSize="23sp">
+
+</Button>
