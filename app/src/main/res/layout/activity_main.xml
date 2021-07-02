@@ -144,7 +144,7 @@
             android:layout_height="19dp"
             android:layout_marginStart="12dp"
             android:layout_weight="2"
-            android:src="@drawable/default_account_image" />
+            android:src="@drawable/ic__timer_circle" />
 
         <TextView
             android:id="@+id/player_name"

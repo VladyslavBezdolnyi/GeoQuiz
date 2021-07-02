@@ -47,14 +47,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         countries = getResources().getStringArray(R.array.countries);
 
-        pushAnimation();
-
-
-
-
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        pushAnimation();
+    }
 
     @Override
     protected void onPause() {

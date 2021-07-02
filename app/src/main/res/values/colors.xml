@@ -12,4 +12,6 @@
     <color name="button_background">#f2eee3</color>
     <color name="line_color">#d3c6b9</color>
     <color name="background">#fdf9f0</color>
+    <color name="red">#ff0000</color>
+
 </resources>

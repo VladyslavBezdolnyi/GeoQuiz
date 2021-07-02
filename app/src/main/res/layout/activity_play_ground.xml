@@ -67,6 +67,8 @@
          />
 
     <ImageView
+        android:id="@+id/timer_panel"
+
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:translationY="3dp"
@@ -78,6 +80,30 @@
         app:layout_constraintBottom_toTopOf="@id/country_frame"
 
         android:src="@drawable/ic_time_panel" />
+
+    <com.timqi.sectorprogressview.SectorProgressView
+
+        android:translationY="3dp"
+        android:translationX="-3dp"
+        android:layout_margin="5dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@mipmap/ic_launcher_round"
+        app:layout_constraintTop_toTopOf="@id/timer_panel"
+        app:layout_constraintStart_toStartOf="@id/timer_panel"
+        app:layout_constraintEnd_toEndOf="@id/timer_panel"
+        app:layout_constraintBottom_toBottomOf="@id/timer_panel"
+
+
+        android:id="@+id/sector_view"
+        app:bgColor="@android:color/transparent"
+        app:fgColor="@color/red"
+        app:percent="-100"
+        app:startAngle="0"
+
+        />
+
+
 
     <ImageView
         android:id="@+id/score_panel"
