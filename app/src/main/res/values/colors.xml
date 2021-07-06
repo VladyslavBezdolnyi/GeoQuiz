@@ -14,4 +14,12 @@
     <color name="background">#fdf9f0</color>
     <color name="red">#ff0000</color>
 
+    <color name="geo_2_sector_panel">#FA4756</color>
+    <color name="geo_2_secondary_countries">#FFC3A8</color>
+    <color name="geo_2_main_orange">#FF9A6A</color>
+    <color name="geo_2_secondary_background">#F2EEE3</color>
+    <color name="geo_2_button_text">#688080</color>
+    <color name="geo_2_gray">#D3C6B9</color>
+    <color name="geo_2_text_gray">#808080</color>
+
 </resources>

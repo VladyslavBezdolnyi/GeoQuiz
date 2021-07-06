@@ -31,6 +31,7 @@
         app:layout_constraintGuide_percent="0.08" />
 
 
+
     <ImageView
         android:id="@+id/country_frame"
         android:layout_width="0dp"
@@ -41,7 +42,7 @@
         app:layout_constraintVertical_weight="60"
 
 
-        android:src="@drawable/ic_square_1"
+        android:src="@drawable/ic_2nd_frame"
         app:layout_constraintBottom_toTopOf="@id/country_name"
         app:layout_constraintEnd_toEndOf="@id/end_line"
         app:layout_constraintStart_toStartOf="@id/start_line"
@@ -49,9 +50,6 @@
 
 
          />
-
-
-
 
     <ImageView
         android:id="@+id/country_tag"
@@ -71,8 +69,8 @@
 
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:translationY="3dp"
-        android:translationX="-3dp"
+        android:translationY="5dp"
+        android:translationX="-5dp"
 
         app:layout_constraintTop_toTopOf="@id/country_frame"
         app:layout_constraintEnd_toEndOf="@id/country_frame"
@@ -83,9 +81,9 @@
 
     <com.timqi.sectorprogressview.SectorProgressView
 
-        android:translationY="3dp"
-        android:translationX="-3dp"
-        android:layout_margin="5dp"
+        android:translationY="5dp"
+        android:translationX="-5dp"
+        android:layout_margin="6dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@mipmap/ic_launcher_round"
@@ -97,7 +95,7 @@
 
         android:id="@+id/sector_view"
         app:bgColor="@android:color/transparent"
-        app:fgColor="@color/red"
+        app:fgColor="@color/geo_2_sector_panel"
         app:percent="-100"
         app:startAngle="0"
 
@@ -113,7 +111,9 @@
         app:layout_constraintTop_toBottomOf="@id/country_frame"
         app:layout_constraintStart_toStartOf="@id/country_frame"
         app:layout_constraintEnd_toEndOf="@id/country_frame"
-        app:layout_constraintBottom_toBottomOf="@id/country_frame"/>
+        app:layout_constraintBottom_toBottomOf="@id/country_frame"
+        android:translationY="-5dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -126,16 +126,13 @@
         android:textStyle="bold"
         android:textColor="@color/background"
         android:textSize="18sp"
+        android:translationY="-5dp"
         />
 
-    <TextView
+    <View
         android:id="@+id/country_name"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="I T A L Y"
-        android:textAlignment="gravity"
-        android:gravity="center_horizontal|center_vertical"
-        android:textColor="@color/black"
 
         app:layout_constraintTop_toBottomOf="@id/country_frame"
         app:layout_constraintStart_toEndOf="@id/start_line"
@@ -144,19 +141,49 @@
         app:layout_constraintVertical_weight="30"
         />
 
+    <TextView
+        android:id="@+id/text_panel"
 
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="@id/country_name"
+        app:layout_constraintStart_toStartOf="@id/country_frame"
+        app:layout_constraintEnd_toEndOf="@id/country_frame"
+        app:layout_constraintBottom_toBottomOf="@id/country_name"
+
+
+        android:gravity="center_vertical"
+        android:paddingStart="35dp"
+        android:paddingBottom="5dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="5dp"
+        app:layout_constraintVertical_bias="0.55"
+
+
+        android:textSize="12sp"
+        android:text="Input Country"
+        android:textColor="@color/geo_2_text_gray"
+        android:background="@drawable/ic_text_background"
+
+        />
 
     <ImageButton
-        android:id="@+id/button_cancel_char"
-        android:layout_marginStart="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/center_line"
-        app:layout_constraintStart_toStartOf="@id/end_line"
-        app:layout_constraintEnd_toEndOf="@id/end_line"
-        android:src="@drawable/ic_skip_answer"
-        android:background="@null"
+        android:layout_width="20dp"
+        android:layout_height="14dp"
+        android:scaleType="fitXY"
+
+        app:layout_constraintTop_toTopOf="@id/text_panel"
+        app:layout_constraintBottom_toBottomOf="@id/text_panel"
+        app:layout_constraintStart_toStartOf="@id/text_panel"
+        app:layout_constraintEnd_toEndOf="@id/text_panel"
+
+        app:layout_constraintHorizontal_bias="0.925"
+
+        android:src="@drawable/ic_cleartext_button"
+        android:background="transparent"
         />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/center_line"
@@ -164,6 +191,8 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.65"/>
+
+
 
     <View
         android:background="@color/line_color"
@@ -179,10 +208,23 @@
         android:layout_height="0dp"
         android:background="@color/button_background"
 
+
         app:layout_constraintTop_toTopOf="@id/center_line"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <ImageButton
+        android:id="@+id/button_cancel_char"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        app:layout_constraintBottom_toBottomOf="@id/center_line"
+        app:layout_constraintTop_toTopOf="@id/center_line"
+        app:layout_constraintStart_toStartOf="@id/end_line"
+        app:layout_constraintEnd_toEndOf="@id/end_line"
+        android:src="@drawable/ic_skip_answer"
+        android:background="@null"
+        android:scaleType="fitXY"
         />
 
 
