@@ -2,13 +2,17 @@ package com.example.geoquiz;
 
 import java.util.Random;
 
+
 class Country{
 
     String name;
+    String mixedName;
+    String dashName;
+
     char[] encryptedNameList;
 
     Country(String[] countries){
-        this.name = countries[new RandomCountryNum(countries.length).getNum()];
+
         encrypting(); // encrypting name char letters
     }
 
@@ -37,7 +41,7 @@ class Country{
             encryptedNameList[i] = encryptedNameList[j];
             encryptedNameList[j] = temp;
         }
-
     }
+
 
 }

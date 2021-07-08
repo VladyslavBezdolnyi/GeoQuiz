@@ -1,45 +1,23 @@
 package com.example.geoquiz;
 
-import androidx.annotation.DrawableRes;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
-
-
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.GestureDetector;
 import android.view.View;
-
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.Animation.AnimationListener;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.view.animation.AnimationUtils;
-import android.widget.TextView;
-
-
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.CountDownLatch;
+
 
 public class MainActivity extends AppCompatActivity {
-    GeoTimer geo;
-    TextView timeView;
-    String[] countries;
 
-    //test
-    private ImageView[] countries_image_list;
+    String[] countries;
     private ImageView countryTeg;
-    private Random random = new Random();
+    private CustomRandom customRandom = new CustomRandom(9); // tie to array.length
     int imageId;
-    //test
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
                 countryTeg.postOnAnimation(new Runnable() {
                     @Override
                     public void run() {
-                        int runNum = random.nextInt(8) + 1;
-                        String uri = "@drawable/country_image_0" + runNum;
+                        String templateIndex = customRandom.leadToTemplate();
+                        String uri = "@drawable/country_image_" + templateIndex;
                         imageId = getResources().getIdentifier(uri, null, getPackageName());
                         countryTeg.setImageResource(imageId);
                         countryTeg.startAnimation(animation);
@@ -111,36 +89,52 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+class CustomRandom{
 
+    Random random = new Random();
+    int arraySize;
+    int isRepeating;
+    int randomIndex;
 
+    CustomRandom(int arraySize){
 
-class RandomCountryNum{
-    private final int num;
+        this.arraySize = arraySize;
 
-    RandomCountryNum(int arraySize){
-
-        num = numGenerator(Player.getRank(), arraySize);
     }
 
-    int numGenerator(int rank, int arraySize){
-        Random random = new Random();
+    private void changeRandomIndex(){
 
-        return random.nextInt(arraySize); // Change!
+        randomIndex = random.nextInt(arraySize -1 ) + 1;
+        if(randomIndex == isRepeating){
+            // recursion until random number no longer repeats
+            changeRandomIndex();
+        }
+
+        isRepeating = randomIndex;
+
     }
 
-    int getNum(){
-        return num;
+    String leadToTemplate(){
+
+        changeRandomIndex();
+        //exception
+        if (randomIndex <= 0 || randomIndex > 1000){
+            return "001";
+        }
+        if (randomIndex < 10){
+            return "00" + randomIndex;
+        }
+        else if (randomIndex > 10 && randomIndex < 100){
+            return "0" + randomIndex;
+        }
+        else{
+            return "" + randomIndex;
+        }
     }
 }
 
-class Player{
-    private static int rank;
 
-    static int getRank(){
-        return rank;
-    }
 
-}
 
 
 

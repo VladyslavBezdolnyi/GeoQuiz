@@ -15,7 +15,6 @@ public class CountrySequence{
         indexArray = fillArray(amount);
         randomIndexSequence = new int[amount];
         fillRandomArray(amount);
-
     }
 
     ArrayList<Integer> fillArray(int amount){
@@ -61,14 +60,8 @@ public class CountrySequence{
             if ((int)mean > indexArray.size()){
                 mean = indexArray.size(); // двигаем вершину вместе с мат ожиданием
             }
-
         }
     }
-
-
-
-
-
 }
 
 class Gaussian{

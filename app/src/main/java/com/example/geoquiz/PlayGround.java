@@ -34,7 +34,7 @@ public class PlayGround extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        addButtons("UkraineUkraineUkraine");
+        addButtons("01234567890123456789012345678901");
     }
 
     @Override
@@ -43,22 +43,34 @@ public class PlayGround extends AppCompatActivity {
         timer.cancel();
     }
 
-    public void addButtons(String countryShifName){
+    public void addButtons(String countryShiftName) {
 
-        for (char c : countryShifName.toCharArray()){
+        for (char c : countryShiftName.toCharArray()) {
             FlowLayout.LayoutParams testParams = new FlowLayout.LayoutParams(
                     FlowLayout.LayoutParams.WRAP_CONTENT,
                     FlowLayout.LayoutParams.WRAP_CONTENT);
-            testParams.setMargins(10,0,10,0);
+            testParams.setMargins(10, 0, 10, 0);
             View dynamicButton = getLayoutInflater().inflate(R.layout.borderless_button, null, false);
-            Button button = (Button)dynamicButton;
+            Button button = (Button) dynamicButton;
             String stringC = c + "";
             button.setText(stringC);
 
             flowLayout.addView(button, testParams);
         }
+
     }
 
+/*    public void changeCountry() {
 
+    }
+
+    public int iterate(int iterateI) {
+        if () {
+            return 0;
+        else{
+
+            }
+        }
+    }*/
 
 }

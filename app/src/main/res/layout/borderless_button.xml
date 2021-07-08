@@ -1,34 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<Button xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/dynamically_button"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-    app:cornerRadius="5dp"
-    app:strokeColor="@color/gray"
-    app:strokeWidth="3dp"
-    android:layout_width="48dp"
-    android:layout_height="55dp"
-    android:text="A"
-    android:minWidth="0dp"
-    android:height="52dp"
-    android:minHeight="0dp"
-    android:layout_margin="5dp"
-    android:textColor="@color/orange"
-    android:textStyle="bold">
 
-</Button>-->
 <Button xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+    style="@style/Theme.AppCompat"
+    android:backgroundTint="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="A"
-    android:minWidth="45dp"
-    android:minHeight="53dp"
+    android:minWidth="37dp"
+    android:minHeight="47dp"
     android:layout_marginTop="10dp"
-    app:strokeWidth="3dp"
-    app:strokeColor="@color/gray"
-    android:textColor="@color/orange"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/line_color"
+    android:textColor="@color/geo_2_text_gray"
     android:textStyle="bold"
+    app:cornerRadius="10dp"
+    android:textSize="16sp"
+    android:textAllCaps="true"
+
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp"
     >
 </Button>
+
+
+<!--
+TRANSPARENT BUTTON (Outlined)
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="A"
+android:minWidth="40dp"
+android:minHeight="51dp"
+android:layout_marginTop="10dp"
+app:strokeWidth="1dp"
+app:strokeColor="@color/geo_2_text_gray"
+android:textColor="@color/geo_2_text_gray"
+android:textStyle="bold"
+    >
+</Button>-->
