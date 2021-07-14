@@ -3,21 +3,28 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-public class CountrySequence{
+class RandomIndexSequence{
 
-    ArrayList<Integer> indexArray;
     int [] randomIndexSequence;
 
-    double mean = 20; // cвязать amount с rank путем вызова функции
-    Gaussian gaussian = new Gaussian(mean);
+    private double mean; // cвязать amount с rank путем вызова функции
+    private double deviation;
+    private Gaussian gaussian;
 
-    CountrySequence(int amount){
+    private ArrayList<Integer> indexArray;
+
+    RandomIndexSequence(double mean, double deviation, int amount){
+
+        this.mean = mean;
+        this.deviation = deviation;
+        gaussian = new Gaussian(mean, deviation);
+
         indexArray = fillArray(amount);
         randomIndexSequence = new int[amount];
         fillRandomArray(amount);
     }
 
-    ArrayList<Integer> fillArray(int amount){
+    private ArrayList<Integer> fillArray(int amount){
         ArrayList<Integer> indexArray = new ArrayList<Integer>();
         for ( int i = 0; i < amount; i++ ){
             indexArray.add(i);
@@ -25,35 +32,27 @@ public class CountrySequence{
         return indexArray;
     }
 
-    void fillRandomArray(int amount){
+    private void fillRandomArray(int amount){
+
+        Random random = new Random();
         int id = 0; // проверяем сколько записано в randomIndex
+
         while (id < amount){
+
             double value = gaussian.getGaussian(mean);
+
             if(value >= indexArray.size()){ // отзеркалить значение больше чем помещается в индекс
                 value = indexArray.size() - 1 - (value - indexArray.size() - 1);
-                if(value >= 0 && value < indexArray.size()){ // проверка на out of bounce
-                    randomIndexSequence[id] = indexArray.get((int)value); id++;
-                    indexArray.remove((int)value);
-                }
-
             }
             if ( value < 0 ){ // отзеркалить значение меньше нуля
                 value = -value;
-                if (value >= 0 && value < indexArray.size()){
-                    randomIndexSequence[id] = indexArray.get((int)value); id++;
-                    indexArray.remove((int)value);
-                }
             }
-            else if (value >= 0 && value < indexArray.size()){
+            if(value >= 0 && value < indexArray.size()){
                 randomIndexSequence[id] = indexArray.get((int)value); id++;
                 indexArray.remove((int)value);
             }
-            else { // когда deviation больше чем количество значений массива
-
-                if (indexArray.size() == 0){
-                    break;
-                }
-                value = new Random().nextInt(indexArray.size());
+            else {
+                value = random.nextInt(indexArray.size());
                 randomIndexSequence[id] = indexArray.get((int)value); id++;
                 indexArray.remove((int)value);
             }
@@ -66,20 +65,17 @@ public class CountrySequence{
 
 class Gaussian{
 
-    double mean;
-    double deviation;
+    private double mean;
+    private double deviation;
 
     Gaussian(double mean, double deviation){
+
         this.mean = mean; this.deviation = deviation;
     }
-    Gaussian(double mean){
-        this.mean = mean; deviation = 5;
-    }
-
 
     double getGaussian(double mean){
-        double value = Math.sin(2 * Math.PI * Math.random()) * (-2 * Math.log(Math.random()));
 
+        double value = Math.sin(2 * Math.PI * Math.random()) * (-2 * Math.log(Math.random()));
         return Math.round((value * deviation) + mean);
     }
 }
