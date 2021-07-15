@@ -2,7 +2,6 @@ package com.example.geoquiz;
 import java.util.ArrayList;
 import java.util.Random;
 
-
 class RandomIndexSequence{
 
     int [] randomIndexSequence;
@@ -48,17 +47,28 @@ class RandomIndexSequence{
                 value = -value;
             }
             if(value >= 0 && value < indexArray.size()){
+
                 randomIndexSequence[id] = indexArray.get((int)value); id++;
                 indexArray.remove((int)value);
             }
             else {
+
                 value = random.nextInt(indexArray.size());
                 randomIndexSequence[id] = indexArray.get((int)value); id++;
                 indexArray.remove((int)value);
             }
-            if ((int)mean > indexArray.size()){
-                mean = indexArray.size(); // двигаем вершину вместе с мат ожиданием
+
+            if (mean < 2 * deviation){
+
+                mean = indexArray.size() / 2;
             }
+
+            else{
+                if (mean > indexArray.size() - 2 * deviation){
+                    mean = indexArray.size() - 2 * deviation;
+                }
+            }
+
         }
     }
 }
