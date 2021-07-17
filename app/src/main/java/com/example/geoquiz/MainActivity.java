@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void pushAnimation(){
-        //Animation>
+
         Animation.AnimationListener animationListener = new Animation.AnimationListener() {
 
             @Override
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         animation.setAnimationListener(animationListener);
         countryTeg = findViewById(R.id.country_tag);
         countryTeg.startAnimation(animation);
-        //Animation>
+
     }
 }
 
@@ -117,8 +117,9 @@ class CustomRandom{
     String leadToTemplate(){
 
         changeRandomIndex();
-        //exception
+
         if (randomIndex <= 0 || randomIndex > 1000){
+            //exception
             return "001";
         }
         if (randomIndex < 10){

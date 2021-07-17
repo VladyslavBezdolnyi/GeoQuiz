@@ -31,7 +31,6 @@ class GeoTimer{
             }
 
             float percent = (currentSecond/totalSecond)*100f;
-            System.out.println(-percent);
             sectorView.setPercent(-percent);
         }
     };

@@ -46,21 +46,15 @@ class RandomIndexSequence{
             if ( value < 0 ){ // отзеркалить значение меньше нуля
                 value = -value;
             }
-            if(value >= 0 && value < indexArray.size()){
-
-                randomIndexSequence[id] = indexArray.get((int)value); id++;
-                indexArray.remove((int)value);
-            }
-            else {
-
+            if (!(value >= 0) || !(value < indexArray.size())) {
                 value = random.nextInt(indexArray.size());
-                randomIndexSequence[id] = indexArray.get((int)value); id++;
-                indexArray.remove((int)value);
             }
+            randomIndexSequence[id] = indexArray.get((int)value);
+            id++;
+            indexArray.remove((int)value);
 
             if (mean < 2 * deviation){
-
-                mean = indexArray.size() / 2;
+                mean = indexArray.size() / 2f;
             }
 
             else{

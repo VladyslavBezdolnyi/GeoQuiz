@@ -76,7 +76,8 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_help"
         android:background="@null"
-        android:padding="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_margin="13dp"
         app:layout_constraintHorizontal_bias="1"
 
         app:layout_constraintEnd_toEndOf="parent"

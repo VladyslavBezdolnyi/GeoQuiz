@@ -11,9 +11,8 @@ class Country{
 
     char[] encryptedNameList;
 
-    Country(String[] countries){
-
-        encrypting(); // encrypting name char letters
+    Country(String country){
+        this.name = country;
     }
 
     private void encrypting(){
@@ -41,6 +40,13 @@ class Country{
             encryptedNameList[i] = encryptedNameList[j];
             encryptedNameList[j] = temp;
         }
+    }
+
+    private String mixLetters(){
+        return "0";
+    }
+    private String dashLetters(){
+        return "0";
     }
 
 

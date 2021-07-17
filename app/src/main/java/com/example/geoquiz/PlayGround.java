@@ -34,7 +34,7 @@ public class PlayGround extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        addButtons("01234567890123456789012345678901");
+        addButtons("012345678901234567890123456789");
     }
 
     @Override
