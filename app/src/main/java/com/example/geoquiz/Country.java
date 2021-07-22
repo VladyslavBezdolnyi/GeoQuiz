@@ -41,7 +41,7 @@ class Country{
 
     }
 
-    char[] deleteSpaces(char[] letterArray){
+    private char[] deleteSpaces(char[] letterArray){
 
 
 
@@ -66,7 +66,7 @@ class Country{
         return NoSpaceLetterArray;
     }
 
-    char[] customSplit(String strValue){
+    private char[] customSplit(String strValue){
 
         int arraySize = strValue.length();
         char[] arraySplit = new char[arraySize];
