@@ -13,38 +13,73 @@ class Country{
 
     Country(String country){
         this.name = country;
+        mixLetters();
     }
 
-    private void encrypting(){
+    private void mixLetters(){
+
+        String resultName = "";
         Random random = new Random();
-        int maxCharacterNum = 32;
+        char[] shiftedName = customSplit(name);
+        shiftedName = deleteSpaces(shiftedName);
+        int arraySize = shiftedName.length;
 
-        if (name.length() > maxCharacterNum - 3){
-            System.out.println("Ошибка. Невозможно создать страну с таким количеством символов.");
-            // !!!Изменить на алерт и выход из приложения
+        for(int i =0; i < arraySize; i++){
+
+            int randomValue = random.nextInt(arraySize);
+            char vessel = shiftedName[i];
+            shiftedName[i] = shiftedName[randomValue];
+            shiftedName[randomValue] = vessel;
+
         }
 
-        encryptedNameList = new char[name.length() + 3 + random.nextInt(maxCharacterNum - (name.length() + 1))];
-        // Add current letters
+        for (char c : shiftedName){
+            resultName = resultName + c;
+        }
+
+        this.mixedName = resultName;
+
+    }
+
+    char[] deleteSpaces(char[] letterArray){
+
+
+
+        int noSpaceArrayLenght = 0;
         for (int i = 0; i < name.length(); i++){
-            encryptedNameList[i] = name.charAt(i);
+
+            if (letterArray[i] != ' '){
+                noSpaceArrayLenght++;
+            }
         }
-        // Generate random letters
-        for (int i = name.length(); i < encryptedNameList.length; i++){
-            encryptedNameList[i] = (char)(random.nextInt(26) + 'a');
+
+        char[] NoSpaceLetterArray = new char[noSpaceArrayLenght];
+
+        int counter = 0;
+        for (char c : letterArray){
+            if (c != ' '){
+                NoSpaceLetterArray[counter] = c;
+                counter++;
+            }
         }
-        // Swap letters in random order
-        for(int i=0; i < encryptedNameList.length - 1; i++){
-            int j = random.nextInt(encryptedNameList.length-1);
-            char temp = encryptedNameList[i];
-            encryptedNameList[i] = encryptedNameList[j];
-            encryptedNameList[j] = temp;
-        }
+
+        return NoSpaceLetterArray;
     }
 
-    private String mixLetters(){
-        return "0";
+    char[] customSplit(String strValue){
+
+        int arraySize = strValue.length();
+        char[] arraySplit = new char[arraySize];
+
+        for (int i = 0; i < arraySize; i++){
+            arraySplit[i] = strValue.charAt(i);
+        }
+
+        return arraySplit;
+
     }
+
+    
     private String dashLetters(){
         return "0";
     }
