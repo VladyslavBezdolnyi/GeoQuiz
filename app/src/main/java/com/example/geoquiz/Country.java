@@ -14,6 +14,7 @@ class Country{
     Country(String country){
         this.name = country;
         mixLetters();
+        dashLetters();
     }
 
     private void mixLetters(){
@@ -80,8 +81,20 @@ class Country{
     }
 
     
-    private String dashLetters(){
-        return "0";
+    private void dashLetters(){
+
+        String resultName = "";
+
+        for (int i = 0; i < name.length(); i++){
+            if (name.charAt(i) == ' '){
+                resultName = resultName + " ";
+            }
+            else{
+                resultName = resultName + "-";
+            }
+        }
+
+        dashName = resultName;
     }
 
 
