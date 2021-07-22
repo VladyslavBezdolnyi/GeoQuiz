@@ -45,15 +45,15 @@ class Country{
 
 
 
-        int noSpaceArrayLenght = 0;
+        int noSpaceArrayLength = 0;
         for (int i = 0; i < name.length(); i++){
 
             if (letterArray[i] != ' '){
-                noSpaceArrayLenght++;
+                noSpaceArrayLength++;
             }
         }
 
-        char[] NoSpaceLetterArray = new char[noSpaceArrayLenght];
+        char[] NoSpaceLetterArray = new char[noSpaceArrayLength];
 
         int counter = 0;
         for (char c : letterArray){
